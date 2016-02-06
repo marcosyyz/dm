@@ -1,0 +1,53 @@
+body{
+    background-color: #fff;
+}
+.status_ok{
+color:#169F84;
+float:right;
+border: #000 1px solid;
+padding: 3px;
+font-size: 24px;
+background-color: #9CE2AE;
+}
+
+.bordas{
+   border-width: 01px;
+   border-color: #cccccc;   
+   border-style: solid;
+   box-shadow: 1px 1px 1px #cccccc;   
+   padding: 5px;   
+}
+
+#corpo{   
+    width: 68%;
+    text-align: center;
+    background-color: #eee;
+}
+
+#menu_lateral{   
+    float: right;
+    width:28%;
+    background-color: #eee;
+}
+
+
+.titulo{
+    width:500px; 
+    margin:auto;
+}
+
+.imagem_preview{
+    width:450px; 
+    margin:auto;
+}
+
+
+
+.direita{
+    float:right;
+}
+
+
+.esquerda{
+    float:left;
+}

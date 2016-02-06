@@ -1,0 +1,26 @@
+ErrorDocument 400 /control/404.php
+ErrorDocument 401 /control/404.php
+ErrorDocument 403 /control/404.php
+ErrorDocument 404 /control/404.php
+ErrorDocument 500 /control/404.php
+
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^cat/([a-z0-9-]+)/?$ index.php?c_url=$1 [NC] 
+
+  RewriteRule ^contato/?$ control/pagina/contato.php [NC,L] 
+  RewriteRule ^lugares/?$ index.php [NC,L]
+  RewriteRule ^noticias-mogi-das-cruzes-e-regiao/?$ control/noticia/noticias.php [NC,L]
+
+  RewriteRule ^noticias/?$ control/noticia/noticias.php [NC,L]
+  RewriteRule ^telefones-uteis/?$ control/pagina/telefones-uteis.php [NC,L]
+  RewriteRule ^telefones-uteis-em-mogi-das-cruzes/?$ control/pagina/telefones-uteis.php [NC,L]
+  RewriteRule ^horarios-trem-expresso-leste/?$ control/pagina/horarios-trem-expresso-leste.php [NC,L]
+  RewriteRule ^telefones-prefeitura/?$ control/pagina/telefones-prefeitura.php [NC,L]
+  RewriteRule ^lugares/([a-z0-9-]+)/?$ control/item/item.php?url=$1&i=$1 [NC,L]
+  RewriteRule ^noticia/([a-z0-9-]+)/?$ control/noticia/post.php?n_url=$1 [NC,L]
+  
+  
+</IfModule>

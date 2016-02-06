@@ -1,0 +1,29 @@
+<?php
+include '../../config.php';
+include ROOT.'model/Login.php';
+
+$nome = isset($_POST['nome']) ? $_POST['nome'] : '' ;
+$senha = isset($_POST['senha']) ? $_POST['senha'] : '' ;
+
+
+if($nome == '')
+    header('Location: '.ROOT_URL.'control/cadastro/usuario.php');
+
+
+$Login = new Login('','',$imagem_anonimo);
+
+if(!$Login->logar($nome,$senha)){
+    ?>
+    <script>
+        window.location.href  = '<?php echo ROOT_URL.'control/login/login.php?s=-1' ?>';
+    </script>
+    <?php
+}else{
+    ?>    
+    <script>
+        window.location.href = '<?php echo ROOT_URL ?>';
+  </script>           
+<?php }
+
+?>
+

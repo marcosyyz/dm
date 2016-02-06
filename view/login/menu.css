@@ -1,0 +1,80 @@
+
+#menu {	
+	margin:30px auto 0px auto;
+	height:43px;
+	border-bottom:1px solid #f5f5f5;
+	list-style-type:none;
+}
+#menu li {
+	float:left;
+	position:relative; /* Importante para posicionar o conteúdo do dropdown*/
+	height:43px;
+	line-height:43px;
+	padding:0 10px;
+	margin-right:30px;
+}
+#menu li:hover {
+	background: #f5f5f5;
+}
+#menu li a {
+	font-size:14px;
+	color: #ccc;
+	display:block; /* Importante para manter visivel a imagem da 'seta' */
+	text-decoration:none;
+}
+#menu li:hover a {
+	color:#161616;
+}
+#menu li .drop {
+	padding-right:21px;
+	background:url("images/drop.png") no-repeat right 20px;
+}
+#menu li .columns {
+	position:absolute; /* Importante para posicionar o conteúdo do dropdown */
+	left:-9999px; /* Esconde o dropdown quando o mouse não está em cima do link */
+	padding:10px 4px 10px 20px;
+	border-top:none;
+	background:#F4F4F4;
+	width: 100px;
+}
+#menu li:hover .columns{
+	left:0;
+}
+#menu ul li {
+	line-height:21px;
+	font-size:12px;
+}
+#menu li ul.col{
+	display:inline;
+	float: left;
+	position: relative;
+	padding:0;
+	margin:0 0 12px 0;
+	width:90%;
+}
+#menu li ul.col li {
+	margin:0 0 10px 0;
+	padding:2px 6px;
+	width:85%;
+	border-bottom:1px solid #fff;
+	list-style-type:none;
+	font-size:12px;
+	height:100%;
+	position:relative;
+	float:none;
+}
+#menu li .col li:hover {
+	padding:2px 6px;
+	margin:0 0 10px 0;
+	border-bottom:1px solid #aaa;
+}
+#menu li .col span{
+	font-size:12px;
+	color:#333;
+	font-weight:bold;
+}
+#menu li .col li a{
+	font-size:16px;
+	color:#aaa;
+}
+#menu li .col li a:hover{color:#333;}
