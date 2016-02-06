@@ -7,4 +7,6 @@ session_start('');
 define('ROOT_URL', 'http://diretoriomogi.com.br/');
 define('ROOT', dirname(__FILE__) . '/');
 
+$imagem_anonimo = ROOT_URL.'view/img/avatar/anonimo.png';
+
 ?>

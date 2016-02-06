@@ -3,9 +3,9 @@
 class Ad
 {  
 
-  protected $host    = "localhost"; // server name
-  protected $user    = "root";          // user name
-  protected $pass    = "";          // password
+  protected $host    = "mysql.diretoriomogi.com.br"; // server name
+  protected $user    = "diretoriomogi04";          // user name
+  protected $pass    = "aGmrzl2112";          // password
   protected $dbname  = "diretoriomogi04";          // database name
   protected $charset = "utf8";   
 	
