@@ -3,20 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/diretorionew/model/Mapa.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/noticia/noticias.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/css/bootstrap.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/js/map.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/admin/editor/editor.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/menulista_direita.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/index.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/cabecalho.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/galeria/galeria.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/galeria/pesquisar_img.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/model/Galeria.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/model/Item.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/item/item.php</file>
-            <file>file:/C:/xampp/htdocs/diretorionew/view/css/main.php</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/view/cabecalho_menor.php</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/view/noticia/post.php</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/view/css/bootstrap.php</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/index.php</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/view/menu_topo.php</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/view/css/adaptive.css</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/view/css/main.php</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/view/cabecalho.php</file>
+            <file>file:/C:/xampp/htdocs/diretoriomogi/model/Noticia.php</file>
         </group>
     </open-files>
 </project-private>

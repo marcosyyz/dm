@@ -4,9 +4,13 @@ session_cache_expire(10);
 session_start('');
 
 //variaveis de caminhos
-define('ROOT_URL', 'http://localhost/diretoriomogi/');
+define('ROOT_URL', 'http://192.168.25.7/diretoriomogi/');
 define('ROOT', dirname(__FILE__) . '/');
 
 $imagem_anonimo = ROOT_URL.'view/img/avatar/anonimo.png';
+
+define('IMAGEM_ANONIMO', ROOT_URL.'view/img/avatar/anonimo.png');
+
+ 
         
 ?>

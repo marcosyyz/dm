@@ -1,5 +1,5 @@
 
-                        <ul >
+                        <ul id="menu-topo">
                             <?php 
                               if(isset($map)){
                                 echo '<li><a href="'.ROOT_URL.'noticias" class="active">Notícias</a></li>';
@@ -15,6 +15,6 @@
                                 </ul>                            
                             </li>
                             <li><a href="<?php echo ROOT_URL.'contato'?>">Contato</a></li>
-                            <li><a style="background-color: #049d65;" href="<?php echo ROOT_URL.'control/item/add_item.php'?>">Adicionar Lugares</a></li>
+                            <li id="btn-adicionar-lugares"><a style="background-color: #049d65;" href="<?php echo ROOT_URL.'control/item/add_item.php'?>">Adicionar Lugares</a></li>
                         </ul>                       
                            

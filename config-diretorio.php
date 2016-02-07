@@ -9,4 +9,5 @@ define('ROOT', dirname(__FILE__) . '/');
 
 $imagem_anonimo = ROOT_URL.'view/img/avatar/anonimo.png';
 
+define('IMAGEM_ANONIMO', ROOT_URL.'view/img/avatar/anonimo.png');
 ?>

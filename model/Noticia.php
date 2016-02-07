@@ -17,9 +17,11 @@ class Noticia extends Classe{
     public $publicado;
     public $carregado; 
     public $noticia_url_solicitada;
+    public $tags;
     
     public function __construct($noticia_cdg = null,$noticia_url = null) {
         parent::__construct($noticia_cdg);
+        $this->tags = array();
         $this->carregado = false;           
         $this->noticia_url_solicitada = isset($noticia_url) ? $noticia_url : '-1';        
         $this->noticia_cdg = isset($noticia_cdg)  ? $noticia_cdg :  -1; 
@@ -63,7 +65,42 @@ class Noticia extends Classe{
             $this->criador = $row->CRIADOR;
             $this->publicado = $row->NOTICIA_PUBLICADO;     
             $this->carregado = true;
+            $this->carregar_tags($this->noticia_cdg);
+        }                
+    }
+    
+    
+    public function lista_noticias_relacionadas($tag = array() ,$limit = 5){
+        if(count($tag) > 0){
+            $tags = ' IN ('.$tag[0]['TAG_CDG'];
+            for($i = 0 ; $i++; count($tag)){
+                $tags = $tags . ','.$tag[$i]['TAG_CDG'];
+            }
+            $tags .= ') ';
+        }else{
+            $tags = ' NOT IN (-1) ';
         }
+        
+        
+        
+        
+        $sql = " SELECT NOTICIA_CDG, NOTICIA_TITULO, NOTICIA_TEXTO,  
+                        NOTICIA_DATA AS NOTICIA_DATA_RAW, NOTICIA_VIEW,
+                        DATE_FORMAT(NOTICIA_DATA,'%d/%m/%Y') AS NOTICIA_DATA , 
+                        NOTICIA_CATEGORIA , NOTICIA_IMAGEM,
+                        NOTICIA_RESUMO,
+                        NOTICIA_IMAGEMURL, NOTICIA_IMAGEMPREVIEW, NOTICIA_URL
+                 FROM NOTICIA 
+                 LEFT JOIN NOTICIA_TAG ON NOTICIATAG_NOTICIA = NOTICIA_CDG
+                 WHERE NOTICIATAG_TAG ".$tags."
+                     AND NOTICIA_CDG <> ".$this->noticia_cdg."
+                        GROUP BY  NOTICIA_CDG
+                        ORDER BY  NOTICIA_DATA_RAW  DESC 
+                        LIMIT ". $limit;
+
+
+        
+        return $this->retorna_array($sql);               
     }
     
     
@@ -101,8 +138,11 @@ class Noticia extends Classe{
         return $this->retorna_array($sql);               
     }
     
+
     
-     private function retorna_array($sql){
+    
+    
+    private function retorna_array($sql){
         
         $this->db->Query($sql);
 
@@ -198,5 +238,26 @@ class Noticia extends Classe{
             return ROOT_URL.'view/img/uploads/'.$this->imagem;
         else
             return  $imagem_preview_link_completo ;
+    }
+    
+    public function carregar_tags($noticia){
+        $this->tags = $this->lista_tags($noticia);
+        
+    }
+    
+    public function lista_tags($noticia){
+        $this->db->Query(' SELECT TAG_CDG, TAG_NOME
+                            FROM NOTICIA_TAG 
+                                LEFT JOIN TAG ON TAG_CDG = NOTICIATAG_TAG 
+                            WHERE NOTICIATAG_NOTICIA = '.$noticia);
+        
+        while ($row = mysqli_fetch_array($this->db->last_result,MYSQLI_ASSOC)) {                    
+            $items[]  =  $row;            
+        }
+
+        
+        $resultado = isset($items) ? $items : array();
+        return $resultado;
+        
     }
 }

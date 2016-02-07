@@ -2,7 +2,7 @@
         <title><?php echo $SEO->getTitle() ?></title>
     </head>
 
-    <?php include ROOT.'view/template_pagina.php';?>
+    <?php include ROOT.'view/inc/template_pagina.php';?>
 
     
     

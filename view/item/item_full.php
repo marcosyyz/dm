@@ -93,7 +93,7 @@
     
     
    
-<?php include ROOT.'view/social.php' ?>
+<?php include ROOT.'view/inc/social.php' ?>
     
 
     

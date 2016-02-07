@@ -49,6 +49,7 @@ Last change:    24/02/15
 [2. 1200 / #1200]
 */
 @media (max-width: 1200px) {
+
     .animation {
         position: absolute;
         width: 100%;
@@ -143,6 +144,8 @@ Last change:    24/02/15
 [6. 992 / #992]
 */
     @media (max-width: 992px) {
+
+         
         .mobile_place {display: block;
         }
         .mobile_none {display: none;}
@@ -181,6 +184,7 @@ Last change:    24/02/15
 [7. 990 / #990]
 */
     @media (max-width: 990px) {
+
         .place_li_cont .style_list img {
             margin: 30px;
             width: 140px;
@@ -217,7 +221,7 @@ Last change:    24/02/15
             padding: 30px;
         }
         .post_content {
-            padding: 10px 60px 30px;
+            padding: 10px 30px 30px;
         }
         .author {
             background: #f1f1f1;
@@ -405,12 +409,11 @@ Last change:    24/02/15
             height: 140px;
         }
         .header .search {
-            width: 100%;
-            max-width: none;
-            position: absolute;
+            width: 80%;
+            max-width: none;            
             top: 60px;
             left: 50%;
-            margin-left: -50%;
+            float:right;                        
         }
         .green_btn_header, .green_btn_header:hover {
             margin-top: 20px;
@@ -434,6 +437,14 @@ Last change:    24/02/15
         .menu-btn {
             top: 20px !important;
         }
+        
+        #logotipo-maior{
+            display:none;
+        }
+        
+        .header{
+            height:50px;
+        }
     }
 
 /*------------------------------------------------------------------
@@ -450,9 +461,9 @@ Last change:    24/02/15
 */
     @media (max-width: 650px) {
         .icon_descr_block .cols {
-            width: 60%;
+            width: 100%;
             float: none;
-            margin: 0 auto;
+            margin: 0 auto;            
         }
         .icon_descr_block .bubble {
             float: left;
@@ -484,6 +495,8 @@ Last change:    24/02/15
             max-height: none;
         }
         .menu ul {padding: 0px;}
+        
+
 
     }
 
@@ -534,6 +547,7 @@ Last change:    24/02/15
         }
         .post_content {
             padding: 10px 30px 30px;
+            
         }
         .author {
             padding: 20px 30px;
@@ -544,7 +558,10 @@ Last change:    24/02/15
         .reviews.open h4 {
             padding: 50px 30px 0px;
         }
-        .icon_descr_block .cols {width: 90%;}
+        .icon_descr_block .cols {         
+            width: 100%;
+        }
+        
         .header_section {
             background: url(../img/c_interior.png) no-repeat;
             margin: 0px 0px;
@@ -598,12 +615,11 @@ Last change:    24/02/15
             height: 130px;
         }
         .header .search {
-            width: 100%;
-            margin: 0px;
-            position: relative;
-            top: auto;
-            margin-top: 24px;
-            left: auto;
+            width: 80%;
+            max-width: none;            
+            top: 60px;
+            left: 50%;
+            float:right;
         }
         .green_btn_header, .green_btn_header:hover {
             width: 100%;
@@ -649,7 +665,10 @@ Last change:    24/02/15
         #close_menu:hover {
             cursor:pointer;
         }
-        .menu .mobile_menu i {}
+        .menu .mobile_menu i {
+            position:relative;
+            top:  -15px;
+        }
         .menu ul {
             bottom: 0px;
             margin-top: 30px;
@@ -661,7 +680,7 @@ Last change:    24/02/15
             font-size: 20px;
         }
         .menu.mobile {
-            height: 65px;
+            height: 35px;
             overflow: hidden;
             transition: 0.3s linear;
         }
@@ -673,7 +692,10 @@ Last change:    24/02/15
         .menu.mobile ul {margin-top: 0px;}
         .menu.mobile ul li {display: none;}
         .menu.mobile ul li {display: none;}
-        .menu.mobile .mobile_menu {display: block;}
+
+
+        
+                .menu.mobile .mobile_menu {display: block;}
         .menu.mobile ul li a {}
         .start_descrition {
             z-index: 9;
@@ -692,7 +714,8 @@ Last change:    24/02/15
             display: block;
             margin: 30px 0px !important;
         }
-
+        
+        
         .bgg {display: none;}
         .start_descrition h1 {
             font-size: 30px;
@@ -711,7 +734,7 @@ Last change:    24/02/15
             color: #ffffff;
             line-height: 28px;
         }
-        .search {display: none;}
+        
         .log_btn     {
             margin-top: -10px;
         }
@@ -741,7 +764,7 @@ Last change:    24/02/15
         }
         .btn_cat {
             width: 100%;
-            display: block;
+           display: block;
         }
         .scroll_block {display: none;}
         .btn_promo_search button {

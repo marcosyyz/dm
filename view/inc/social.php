@@ -31,11 +31,12 @@
                       <!-- DISLIKE -->
             <a href="javascript:enviar_curtida('dislike',-1);" target="_blank" class="share-btn reddit">
                 <i class="fa fa-thumbs-down"></i>
-            </a>   
-                      
+            </a>                         
                       <div id="contador-like"   class="cor-like contador-<?php echo $identificador ?> posicao-like-<?php echo $identificador ?>"><?php echo $Curtida->total(1) ?></div>
                        <div id="contador-dislike"  class="cor-dislike contador-<?php echo $identificador ?> posicao-dislike-<?php echo $identificador ?>"><?php echo $Curtida->total(-1) ?></div> 
-        </div>                      
+        
+        </div>  
+       
              <!-- data-layout="button" -->                
          <!--// data-href="http://www.facebook.com/ampliatta" -->                                                          
     </div>            

@@ -4,6 +4,7 @@ include ROOT.'model/Noticia.php';
 include ROOT.'model/SEO.php';
 include ROOT.'model/Comentario.php';
 include ROOT.'model/Curtida.php';
+include ROOT.'model/Ranking.php';
 
 
 //carregar parametros da noticia
@@ -24,11 +25,13 @@ if((is_numeric($noticia_cdg)) || ($noticia_url != '-1')){
     $Curtida = New Curtida(-1,$Noticia->noticia_cdg,1);
     $Comentario = New Comentario($Noticia->noticia_cdg);
     $SEO = New SEO();
+    $Ranking = New Ranking();
 
     //carregar colecoes
     $Noticia->adicionar_view();
     $comentarios = $Comentario->lista_comentarios_noticia($Noticia->noticia_cdg);
-
+    $ranking =  $Ranking->lista_ranking_usuarios();
+    $noticias_relacionadas = $Noticia->lista_noticias_relacionadas($Noticia->tags,5);
  //carregar textos para SEO
     $SEO->setTitle($Noticia->titulo.' - Notícias Diretório Mogi ');
     $SEO->setDescription($Noticia->resumo); // ta indo 200 letras

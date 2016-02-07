@@ -50,7 +50,7 @@ class Comentario extends Classe{
             
             $sql = ' SELECT COMENTARIO_TEXTO,DATE_FORMAT(COMENTARIO_DATA,"%d/%m/%Y %h:%i") AS DATA,
                        USUARIO_NOME, ITEMCOMENTARIO_ITEM, COMENTARIO_DATA, COMENTARIO_RATING,
-                       USUARIO_CDG, USUARIO_IMAGEM
+                       USUARIO_CDG, USUARIO_IMAGEM, USUARIO_TIPO
                        FROM COMENTARIO 
                        LEFT JOIN ITEM_COMENTARIO ON ITEMCOMENTARIO_COMENTARIO = COMENTARIO_CDG
                        LEFT JOIN USUARIO ON USUARIO_CDG = ITEMCOMENTARIO_USUARIO
@@ -71,7 +71,7 @@ class Comentario extends Classe{
             $sql = ' SELECT COMENTARIO_TEXTO,
                             DATE_FORMAT(COMENTARIO_DATA,"%d/%m/%Y %h:%i") AS DATA,
                             USUARIO_NOME, USUARIO_CDG, USUARIO_IMAGEM,COMENTARIO_DATA,
-                            NOTCOMENTARIO_NOTICIA
+                            NOTCOMENTARIO_NOTICIA, USUARIO_TIPO
                        FROM COMENTARIO 
                        LEFT JOIN NOTICIA_COMENTARIO ON NOTCOMENTARIO_COMENTARIO = COMENTARIO_CDG
                        LEFT JOIN USUARIO ON USUARIO_CDG = NOTCOMENTARIO_USUARIO
@@ -120,6 +120,18 @@ class Comentario extends Classe{
             $this->total_atual = $this->db->RowCount();
             $comentarios = array();            
             while ($row = mysqli_fetch_array($this->db->last_result,MYSQLI_ASSOC)) {
+                if($row['USUARIO_TIPO'] == 0){
+                    if($row['USUARIO_IMAGEM'] == ''){
+                        $row['USUARIO_IMAGEM'] = IMAGEM_ANONIMO;
+                    }else{
+                        $row['USUARIO_IMAGEM'] = ROOT_URL.'view/img/uploads/'.$row['USUARIO_IMAGEM'];
+                    }
+                }
+                
+                if($row['USUARIO_IMAGEM'] == ''){
+                        $row['USUARIO_IMAGEM'] = IMAGEM_ANONIMO;
+                }
+                
                 $comentarios[]  =  $row;
             }                 
             return $comentarios;                              

@@ -5,12 +5,12 @@
 
 <title>Notícias de Mogi das Cruzes - Diretório Mogi </title>
 
-<?php include ROOT.'view/template_pagina.php' ?>
+<?php include ROOT.'view/inc/template_post.php' ?>  
 
         
 <!--content-->
 <div class="col-md-12 basic" >
-<div class="place_li_cont" >
+<div class="splace_li_cont" >
 <!--headlines-->
 <!--Blog post style one-->
 <div class="post p_style_one open" style=" background-position: bottom; background-image: url(<?php echo ROOT_URL.'view/img/uploads/mogiurubu.jpg' ?>);">
@@ -22,10 +22,13 @@
         </h1>
     </div>
 </div>
+
+
 <div itemprop="articleBody" class="post_content">
+   <div class="corpo esquerda">
     <?php 
     if(isset($imagem_caminho_completo)){
-        echo ' <center><img itemprop="image" style="height:405px; width:582px" ';
+        echo ' <center><img itemprop="image"  ';
         echo ' src="'.$imagem_caminho_completo.'" /> ';
         echo ' </center> ';
     }
@@ -41,7 +44,12 @@
         </form>
     </div>
 </div>-->
-<div> <?php include ROOT.'view/social.php' ?> </div>
+    <div class="esquerda"> <?php include ROOT.'view/inc/social.php' ?> </div>
+
+
+
+
+
 <div class="p_footer">
 <ul>
     <li><a href="<?php echo ROOT_URL.'noticias'?>"><span itemprop="articleSection"><i class="fa fa-tags"></i><?php echo $Noticia->categoria; ?></span></a></li>
@@ -52,7 +60,7 @@
         </a>
     </li>
     <li><a href="#"><span itemprop="datePublished" content="<?php echo $Noticia->data_eua; ?>"><i class="fa fa-calendar"></i><?php echo $Noticia->data; ?></span></a></li>
-    <li><a href="#"><span><i class="fa fa-user"></i><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><?php echo $Noticia->criador; ?></span></span></span></a></li>    
+    <li><a href="#"><span><i class="fa fa-user"></i><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><?php echo $Noticia->criador; ?></span></span></span></a></li> 
     <?php 
         if(isset($_SESSION['USUARIO_NIVEL']))
         if($_SESSION['USUARIO_NIVEL'] == 2 )
@@ -74,8 +82,7 @@
     </script>
     </center>
 
-</div>
-</div>
+
 
 
 <div id="div_comentarios" class="reviews open">
@@ -90,9 +97,7 @@
                 <div class="user_go">
                     <i class="fa fa-link"></i>
                 </div>
-                <img src="<?php echo ($c['USUARIO_CDG'] != 1) ? 
-                            (isset($_SESSION['IDSOCIAL'])? '' : ROOT_URL.'view/img/uploads/').$c['USUARIO_IMAGEM'] :
-                            $imagem_anonimo ?>" alt="Avatar usuario avaliação">
+                <img src="<?php echo $c['USUARIO_IMAGEM'] ?>" alt="Avatar usuario avaliação">
             </a>
         </div>
         <div class="texts">
@@ -120,6 +125,24 @@
     </div>
 </form>
 </div>
+
+
+
+
+</div><!-- corpo -->
+
+
+<div class="barra-lateral-direita direita">
+    <?php include ROOT.'view/inc/ranking_usuario.php' ?>
+    <br>
+        <?php include ROOT.'view/inc/noticias_relacionadas.php' ?>
+</div>
+
+
+
+</div>
+</div>
+
 
 </div>
 </div>

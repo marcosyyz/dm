@@ -105,7 +105,7 @@
     
     
    
-<?php include ROOT.'view/social.php' ?>  
+<?php include ROOT.'view/inc/social.php' ?>  
     
 <?php if(trim($Item->descricao) != '')  {   
     echo '<div class="item-descricao">'.$Item->descricao.'</div>';
@@ -130,9 +130,7 @@
                 <div class="user_go">
                     <i class="fa fa-link"></i>
                 </div>
-                <img src="<?php echo ($c['USUARIO_CDG'] != 1) ? 
-                            (isset($_SESSION['IDSOCIAL'])? '' : ROOT_URL.'view/img/uploads/').$c['USUARIO_IMAGEM'] :
-                            $imagem_anonimo ?>" alt="Avatar usuario avaliação">
+                <img src="<?php echo $c['USUARIO_IMAGEM'] ?>" alt="Avatar usuario avaliação">
             </a>
         </div>
         <div class="texts">

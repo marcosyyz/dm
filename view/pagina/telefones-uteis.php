@@ -3,7 +3,7 @@
 </head>
     <title>Notícias de Mogi das Cruzes - Diretório Mogi </title>
 
-    <?php include ROOT.'view/template_pagina.php' ?>
+    <?php include ROOT.'view/inc/template_pagina.php' ?>
 
          <!--content-->
 <div class="col-md-12 basic" >   

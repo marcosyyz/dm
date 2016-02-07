@@ -37,7 +37,7 @@
     <?php $img_user = str_replace('sz=50', 'sz=400', $Usuario->getImagem()); ?> 
       
     <div id="map_place" class="map_place">
-       <img  style="height:254px; width:254px;" class="content_top_left"  src="<?php echo ($img_user == '' ? $imagem_anonimo : $img_user ) ?>" />
+       <img  style="height:254px; width:254px;" class="content_top_left"  src="<?php echo ($img_user == '' ? IMAGEM_ANONIMO : $img_user ) ?>" />
     </div>
     
     <!--Avaliados Place-->

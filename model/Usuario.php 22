@@ -153,10 +153,10 @@ class Usuario extends Classe
       if(trim($this->imagem) != '' ){
         return $this->imagem;
       }else{
-         return  IMAGEM_ANONIMO;
+         return  $imagem_anonimo;
       }
     }  else {   
-       return  IMAGEM_ANONIMO;
+       return  $imagem_anonimo;
     }  
   }
   public function getCidade() {return $this->cidade;}
