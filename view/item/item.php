@@ -135,7 +135,7 @@
         </div>
         <div class="texts">
             <div class="head_rev">
-                <a href="#"><?php echo $c['USUARIO_NOME'] ?></a> 
+                <a href="<?php echo ROOT_URL.'control/cadastro/perfil.php?u='.$c['USUARIO_CDG'] ?>"><?php echo $c['USUARIO_NOME'] ?></a> 
                 <?php if(isset($c['COMENTARIO_RATING'])){
 					if(isset($avaliacoes_invertido[$c['COMENTARIO_RATING']])){
                         echo '&nbsp;&nbsp;&nbsp;&nbsp;';

@@ -24,11 +24,12 @@ class Ranking extends Classe{
                               (COUNT(ITEM_CDG) * 3) + (SELECT COUNT(ITEMCOMENTARIO_ITEM) FROM ITEM_COMENTARIO
                                      WHERE ITEMCOMENTARIO_USUARIO = USUARIO_CDG )
                             ) AS PONTOS
-                    FROM USUARIO
-                    LEFT JOIN ITEM ON ITEM_CRIADOR = USUARIO_CDG
-                    GROUP BY USUARIO_CDG
-                    ORDER BY PONTOS DESC 
-                    LIMIT '.$limit;
+                     FROM USUARIO
+                        LEFT JOIN ITEM ON ITEM_CRIADOR = USUARIO_CDG
+                     WHERE USUARIO_CDG <> 1
+                     GROUP BY USUARIO_CDG
+                     ORDER BY PONTOS DESC 
+                     LIMIT '.$limit;
                       
                      
                                   

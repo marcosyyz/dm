@@ -134,12 +134,12 @@ position:relative;
 
 .posicao-like-item{
    top: 310px;
-    left:290px;
+    left:370px;
 }
 
 .posicao-dislike-item{
     top: 310px;
-    left:350px;
+    left:430px;
 }
 
 .fb-like {
