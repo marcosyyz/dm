@@ -1,6 +1,7 @@
 <?php
 
 
+
 Class Galeria {
     
     private static $total = 0 ;
@@ -28,9 +29,17 @@ Class Galeria {
     
     
 public static function diretorio_acima($caminho){
-    $caminho = strrev($caminho) ;    
-    $indice = strpos($caminho,'\\', 1);
-    $caminho = substr($caminho, $indice);
+  $caminho = strrev($caminho) ;    	
+  $indice = strpos($caminho,'/', 1);
+  $indice_barra_invertida = strpos($caminho,'\\', 1);
+
+  $indice  =  $indice  == false ?  999999 : $indice;
+  $indice_barra_invertida = ($indice_barra_invertida  == false )  ?  999999 : $indice_barra_invertida;	
+  if($indice < $indice_barra_invertida) {
+          $caminho = substr($caminho, $indice);
+  }else{
+      $caminho = substr($caminho, $indice_barra_invertida);  
+  }
     return  strrev($caminho);
 }    
     
@@ -45,7 +54,10 @@ public static function busca_arquivos_recursivo($palavra_chave,$diretorio){
     $recursiveIterator = new RecursiveIteratorIterator($iterator);
     foreach ( $recursiveIterator as $arquivo ) {
         // se nao for .. ou .
-        if(!in_array(trim($arquivo->getFilename()),['..','.'])){
+           if(     !in_array(
+                      trim($arquivo->getFilename()),
+                      array("..","."))
+                ){
             // localizar palavra de busca        
             if(!$mostrar_tudo){
                 $pos = strpos($arquivo->getFilename(), $palavra_chave);
@@ -76,7 +88,7 @@ public static function lista_arquivos($dir){
     self::setDirAtual($dir);
     $diretorio = dir($dir);
     while($arquivo = $diretorio -> read()){
-        if(!in_array(trim($arquivo),['..','.'])){
+        if(!in_array(trim($arquivo),array("..","."))){          
             if(!is_dir($dir.$arquivo)){
                 $caminho = str_replace( $root_invertido ,'', $diretorio->path);
                 $caminho = str_replace( ROOT ,'', $caminho);
@@ -97,9 +109,11 @@ public static function lista_diretorios($dir){
     self::setDirAtual($dir);
     
     while($arquivo = $d -> read()){
-        if(!in_array(trim($arquivo),['..','.']))
-            if(is_dir($dir.$arquivo))
+         if(!in_array(trim($arquivo),array("..","."))){
+            if(is_dir($dir.$arquivo)):
                 $retorno[] = $dir.$arquivo;
+            endif;
+        }
     }
     $d -> close();
     return $retorno;

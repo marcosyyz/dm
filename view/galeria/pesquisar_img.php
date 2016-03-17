@@ -23,7 +23,7 @@ if($subir == 1){
         echo ' <ul class="galeria">';
         foreach ($arquivos as $i => $a){             
             echo "<li>
-            <a href=\"javascript:entrar_na_pasta('". str_replace('\\','\\\\', $a).'\\\\'."');\" data-source='#' title='teste'
+            <a href=\"javascript:entrar_na_pasta('". str_replace('\\','\\\\', $a)."');\" data-source='#' title='teste'
                     style='width:193px;height:125px;'>
                     <img class='img-galeria' src='".ROOT_URL."view/img/pastinha.png' width='200' height='150' />
                     <span><br>".basename($a)."</span>

@@ -28,6 +28,8 @@ function subir_diretorio(pasta){
     $(document).ajaxStop(function () {
         $(".loading").hide();
     });
+   
+    
 
     $.ajax({
               method: "POST",
@@ -39,7 +41,7 @@ function subir_diretorio(pasta){
                  //alert( "Data Saved: " + msg );
                  $("#corpo").html(retorno);                     
             });
-}
+  }
      
 function entrar_na_pasta(pasta){
     $(document).ajaxStart(function () {
@@ -50,14 +52,14 @@ function entrar_na_pasta(pasta){
         $(".loading").hide();
     });
 
-   //alert(pasta);
+   
     $.ajax({
               method: "POST",
               url: "pesquisar_img.php",
               data: { caminho:  pasta                          
                 }
             }).done(function( retorno ) {
-                 //alert( "Data Saved: " + msg );
+                 
                  $("#corpo").html(retorno);                     
             });
 }
@@ -66,7 +68,7 @@ function entrar_na_pasta(pasta){
 function enviar_imagem_ao_pai(valor){    
     var campo_de_volta = document.getElementById('campo_de_volta').value;
     var src_img_de_volta = document.getElementById('src_img_de_volta').value;
-    alert(campo_de_volta );
+    //alert(campo_de_volta );
     window.opener.document.getElementById(campo_de_volta).value =valor;
     window.opener.document.getElementById(src_img_de_volta).src = valor;    
     window.close();    
@@ -139,7 +141,7 @@ $(document).ready(function() {
             // barra normal precisa de 4 pq ao entrar NESTA string vira duas, 
             // e ao entrar na string do browser durante compílacao vira uma.            
             echo "<li>
-                <a href=\"javascript:entrar_na_pasta('". str_replace('\\','\\\\', $a).'\\\\'."');\" data-source='#' title='teste'
+                <a href=\"javascript:entrar_na_pasta('". str_replace('\\','\\\\', $a)."');\" data-source='#' title='teste'
                     style='width:193px;height:125px;'>
                      <img class='img-galeria' src='".ROOT_URL."view/img/pastinha.png' width='200' height='150' />
                  <span><br>".basename($a)."</span>
