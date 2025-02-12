@@ -20,7 +20,7 @@ $filtro_categoria_url = $filtro_categoria_url == '' ? '-1' : $filtro_categoria_u
 //filtro de bairro
 $filtro_bairro = isset($_GET['b']) ?  $_GET['b'] : -1;
 
-//filtro de paavra chave
+//filtro de palavra chave
 $filtro_busca     = isset($_POST['filtro_busca']) ?  trim($_POST['filtro_busca']) : '';
 if($filtro_busca == '-1') $filtro_busca  = '';
 
