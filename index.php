@@ -13,7 +13,9 @@ $status = isset($_GET['s']) ?  $_GET['s'] : -1;
 
 //filtro de categoria
 $filtro_categoria = isset($_GET['c']) ?  $_GET['c'] : -1;
+
 $filtro_categoria = $filtro_categoria == '' ? -1 : $filtro_categoria ;
+
 $filtro_categoria = (!is_numeric($filtro_categoria)) ? -1 : $filtro_categoria ;
 $filtro_categoria_url = isset($_GET['c_url']) ?  $_GET['c_url'] : '-1';
 $filtro_categoria_url = $filtro_categoria_url == '' ? '-1' : $filtro_categoria_url ;
